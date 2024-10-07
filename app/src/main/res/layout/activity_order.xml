@@ -1,134 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:padding="16dp"
     tools:context=".OrderActivity">
 
-
+  <!-- Title: Order Notes -->
   <TextView
       android:id="@+id/order_textview"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="@string/order_label_text"
-      android:textSize="18sp"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      android:text="Order Notes"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      android:layout_marginBottom="24dp" />
 
-
-  <TextView
-      android:id="@+id/name_label"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="32dp"
-      android:text="@string/name_label_text"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/order_textview" />
-
-
+  <!-- Input for Name -->
   <EditText
       android:id="@+id/name_text"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:ems="10"
-      android:hint="@string/enter_name_hint"
+      android:hint="Isi nama lengkap"
       android:inputType="textPersonName"
-      app:layout_constraintBaseline_toBaselineOf="@+id/name_label"
-      app:layout_constraintStart_toEndOf="@+id/name_label" />
+      android:layout_marginBottom="16dp" />
 
-
-  <TextView
-      android:id="@+id/address_label"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="@string/address_label_text"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/name_label" />
-
-
+  <!-- Input for Address -->
   <EditText
       android:id="@+id/address_text"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:ems="10"
-      android:hint="@string/enter_address_hint"
+      android:hint="Isi alamat sekarang"
       android:inputType="textMultiLine"
-      app:layout_constraintBaseline_toBaselineOf="@+id/address_label"
-      app:layout_constraintStart_toEndOf="@+id/address_label" />
+      android:minLines="3"
+      android:layout_marginBottom="16dp" />
 
-
+  <!-- City Label -->
   <TextView
-      android:id="@+id/phone_label"
+      android:id="@+id/city_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="@string/phone_label_string"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/address_text" />
+      android:text="City"
+      android:textSize="16sp"
+      android:layout_marginBottom="8dp" />
 
+  <!-- Spinner for City Selection -->
+  <Spinner
+      android:id="@+id/city_spinner"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="16dp" />
 
+  <!-- Input for Phone -->
   <EditText
       android:id="@+id/phone_text"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:ems="10"
-      android:hint="@string/enter_phone_hint"
+      android:hint="Isi dengan nomor telepon"
       android:inputType="phone"
-      app:layout_constraintBaseline_toBaselineOf="@+id/phone_label"
-      app:layout_constraintStart_toEndOf="@+id/phone_label" />
+      android:layout_marginBottom="16dp" />
 
+  <!-- Input for Notes -->
+  <EditText
+      android:id="@+id/notes_text"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Tambahkan catatan pesanan anda"
+      android:inputType="textMultiLine"
+      android:minLines="3"
+      android:layout_marginBottom="24dp" />
 
+  <!-- Delivery Method Label -->
   <TextView
       android:id="@+id/delivery_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="@string/choose_delivery_method"
-      android:textSize="18sp"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/phone_text"
-      tools:ignore="UnknownId" />
+      android:text="Choose Delivery Method"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      android:layout_marginBottom="8dp" />
 
-
+  <!-- RadioGroup for Delivery Method -->
   <RadioGroup
-      android:layout_width="wrap_content"
+      android:id="@+id/delivery_radio_group"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="vertical"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/delivery_label">
+      android:orientation="vertical">
 
-
+    <!-- Same Day Radio Button -->
     <RadioButton
         android:id="@+id/sameday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onRadioButtonClicked"
-        android:text="@string/same_day_messenger_service" />
+        android:text="Same day messenger service"
+        android:layout_marginBottom="8dp" />
 
-
+    <!-- Next Day Radio Button -->
     <RadioButton
         android:id="@+id/nextday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="true"
-        android:onClick="onRadioButtonClicked"
-        android:text="@string/next_day_ground_delivery" />
+        android:text="Next day ground delivery"
+        android:layout_marginBottom="8dp" />
 
-
+    <!-- Pick Up Radio Button -->
     <RadioButton
         android:id="@+id/pickup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onRadioButtonClicked"
-        android:text="@string/pick_up" />
+        android:text="Pick up" />
+
   </RadioGroup>
-
-
 </LinearLayout>
