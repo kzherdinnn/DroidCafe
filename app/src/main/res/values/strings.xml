@@ -63,4 +63,10 @@
     <string name="next_day_ground_delivery">Next day ground delivery</string>
     <string name="pick_up">Pick up</string>
 
+    <string-array name="city_array">
+        <item>Kota Bandung</item>
+        <item>Kota Cimahi</item>
+        <item>Kabupaten Bandung</item>
+    </string-array>
+
 </resources>
